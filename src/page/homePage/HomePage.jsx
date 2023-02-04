@@ -1,8 +1,11 @@
+import { CircularProgress } from '@mui/material'
 import React from 'react'
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+     <CircularProgress size={100} color="success" />
+    </div>
   )
 }
 

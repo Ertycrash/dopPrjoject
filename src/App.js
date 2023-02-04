@@ -1,3 +1,4 @@
+import { CssBaseline } from '@mui/material'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import Main from './Main'
@@ -8,6 +9,7 @@ function App() {
     <div className="wrapper">
       <BrowserRouter>
         <Provider store={store}>
+        <CssBaseline />
           <Main />
         </Provider>
       </BrowserRouter>
