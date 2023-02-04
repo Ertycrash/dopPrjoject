@@ -41,6 +41,7 @@ export default function Nav() {
           icon={<HomeIcon fontSize="small" />}
         />
         <StyledBreadcrumb component="a" href="#" label="Catalog" />
+        
         <StyledBreadcrumb
           label="Accessories"
           deleteIcon={<ExpandMoreIcon />}

@@ -1,29 +1,43 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Avatar from '@mui/material/Avatar'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import Divider from '@mui/material/Divider'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Tooltip from '@mui/material/Tooltip'
+import PersonAdd from '@mui/icons-material/PersonAdd'
+import Settings from '@mui/icons-material/Settings'
+import Logout from '@mui/icons-material/Logout'
+import { useDispatch } from 'react-redux'
+import { setModal } from '../../../../store/slices/authSlice'
 
 export default function Profil() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const dispatch = useDispatch()
+  const open = Boolean(anchorEl)
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
+  const  handleOpenAuth =()=>{
+    dispatch(setModal())
+  }
+  
   return (
     <React.Fragment>
-      <Box sx={{  display: 'flex', alignItems: 'center', textAlign: 'center',ml:'50px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          textAlign: 'center',
+          ml: '50px'
+        }}
+      >
         <Typography sx={{ minWidth: 100 }}>Contact</Typography>
         <Typography sx={{ minWidth: 100 }}>Profile</Typography>
         <Tooltip title="Account settings">
@@ -55,7 +69,7 @@ export default function Profil() {
               width: 32,
               height: 32,
               ml: -0.5,
-              mr: 1,
+              mr: 1
             },
             '&:before': {
               content: '""',
@@ -67,21 +81,19 @@ export default function Profil() {
               height: 10,
               bgcolor: 'background.paper',
               transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
+              zIndex: 0
+            }
+          }
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={() => {
+            handleClose()
+            handleOpenAuth()
+          }}
+        >
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
@@ -101,5 +113,5 @@ export default function Profil() {
         </MenuItem>
       </Menu>
     </React.Fragment>
-  );
+  )
 }

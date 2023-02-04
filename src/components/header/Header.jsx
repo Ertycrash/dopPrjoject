@@ -127,7 +127,7 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Profil/>
+          <Profil/> 
         </Toolbar>
       </AppBar>
     </Box>

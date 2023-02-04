@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const mainSlice = createSlice({
     name:'mainSlice',
-    initialState:{
+    initialState:{npm
         menu:null
     },
     reducers:{
