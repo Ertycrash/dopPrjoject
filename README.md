@@ -12,8 +12,8 @@
 
 
 ## -когда закончили работать на своей команенте запуште в своей репоризиторий
+### git pull origin master
 ### git add .
 ### git commit -m "commit"
-### git pull origin master
 ### git branch -M 'название вашего репозитория' пример Erkutbek_Dev
 ### git push origin 'название вашего репозитория' пример Erkutbek_Dev
